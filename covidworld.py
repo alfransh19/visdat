@@ -10,7 +10,11 @@ from bokeh.io import curdoc
 from bokeh.layouts import column, row, WidgetBox
 from bokeh.models.widgets import CheckboxGroup, Slider, RangeSlider, Tabs
 
-df = pd.read_csv(r"C:\Users\alfra\Downloads\ADA\full_grouped.csv")
+url='https://drive.google.com/file/d/1eqaMuhlPUcFqRxCgCvnFdo30jpy8nJuy/view?usp=sharing'
+file_id=url.split('/')[-2]
+dwn_url='https://drive.google.com/uc?id=' + file_id
+df = pd.read_csv(dwn_url)
+
 df["Date"] = pd.to_datetime(df["Date"])
 
 data = df[['Date','Country/Region','Confirmed','Deaths','Recovered','Active']]
