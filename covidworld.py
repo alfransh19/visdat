@@ -94,6 +94,6 @@ src = buatdataset(lokasi_now, feature_select.value)
 c = buatplot(src, feature_select.value)
 
 # Pemasangan widget untuk interaktive visualisasi data covid
-controls = WidgetBox(feature_select, lokasi_selection)
+controls = Column(feature_select, lokasi_selection)
 layout = row(controls, c)
 curdoc().add_root(layout)
